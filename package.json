@@ -1,0 +1,9 @@
+{
+  "name": "socket-notif",
+  "version": "1.0.0",
+  "author": "claudiu909",
+  "dependencies": {
+    "express": "^4.15.2",
+    "socket.io": "^2.0.1"
+  }
+}
