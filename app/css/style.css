@@ -1,0 +1,44 @@
+li {
+    list-style: none;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+li i {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    background: #ddd;
+    margin-right: 5px;
+    margin-bottom: 1px;
+}
+
+li.online i {
+    -webkit-animation: pulse 2s ease-in-out infinite alternate;
+    animation: pulse 2s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        background: #ddd;
+    }
+    50% {
+        background: #21d315;
+    }
+    100% {
+        background: #ddd;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        background: #ddd;
+    }
+    50% {
+        background: #21d315;
+    }
+    100% {
+        background: #ddd;
+    }
+}

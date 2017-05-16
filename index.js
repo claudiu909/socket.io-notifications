@@ -36,13 +36,17 @@ io.on('connection', function(socket) {
         socket.guestName = guestName;
         socket.forUserId = forUserId;
         if(users[forUserId]) {
-            io.to(users[forUserId]).emit('notifyUser', guestName, true);
+            io.to(users[forUserId]).emit('notifyUser', guestName, 'view', true);
         }
+    });
+
+    socket.on('guestSubmit', function (guestName, forUserId) {
+        io.to(users[forUserId]).emit('notifyUser', guestName, 'submit', true);
     });
 
     socket.on('disconnect', function () {
         if (socket.guestName) {
-            io.to(users[socket.forUserId]).emit('notifyUser', socket.guestName, false);
+            io.to(users[socket.forUserId]).emit('notifyUser', socket.guestName, 'view', false);
             return;
         }
 
